@@ -1,0 +1,15 @@
+<p>tracks page</p>
+
+<div class="container">
+{{#results}}
+    <div class="track-name">
+        <p>{{name}}</p>
+    </div>
+    <div>
+        <audio controls
+        src ="{{preview_url}}" type="audio">
+        </audio>
+    </div>
+    <!-- <a href="/tracks/{{id}}">View Tracks</a> -->
+{{/results}}
+</div>
