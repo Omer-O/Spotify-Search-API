@@ -1,2 +1,3 @@
 # Spotify-Search-API
-Search artists and listen to their albums - created with Handlebars and Express
+Using spotify's API documantation, Handlebars and Express
+User can -> search -> pick album -> listen and download
