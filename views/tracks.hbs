@@ -1,15 +1,15 @@
 <p>tracks page</p>
 
-<div class="container">
+<div class="album-priview">
 {{#results}}
-    <div class="track-name">
-        <p>{{name}}</p>
-    </div>
-    <div>
+    <div class="tracks">
+        <div class="number-name">
+            <p class="track-number">{{track_number}}.</p>
+            <p>{{name}}</p>
+        </div>
         <audio controls
         src ="{{preview_url}}" type="audio">
         </audio>
     </div>
-    <!-- <a href="/tracks/{{id}}">View Tracks</a> -->
 {{/results}}
 </div>

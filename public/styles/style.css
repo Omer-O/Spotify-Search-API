@@ -15,17 +15,15 @@ body {
     justify-content: space-evenly;
     height: 100%;
 }
+
 .results {
     max-width: min-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-
     background: #e7f0f5cc;
-     border: black 10px solid;
-    /* border-radius: 20px;
-    padding: 15px; */
+    border: black 10px solid;
     margin: 40px;
     justify-content: space-around;
     box-shadow: 0 1px 15px rgb(0, 0, 3), 0 10px 3px 1px rgba(4, 5, 6, 0.24);
@@ -35,8 +33,6 @@ body {
 img {
     height: 300px;
     width: 300px;
-    /* border-radius: 25%; */
-
 }
 
 .artist-name {
@@ -56,6 +52,33 @@ img {
     border-radius: 5px;
     color: white;
     font-weight: bold;
+}
+
+.album-priview {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.tracks {
+    display: flex;
+    flex-flow: row;
+    place-content: space-between;
+    margin-right: 20%;
+    margin-left: 25%;
+    padding: 15px;
+    border: solid 3px black;
+    border-radius: 30px;
+}
+
+.number-name {
+    display: flex;
+}
+
+.track-number {
+    margin-right: 5px;
 }
 
 img:hover {

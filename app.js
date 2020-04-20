@@ -86,5 +86,5 @@ app.get('/tracks/:trackId', (req, res) => {
       }, function(err) {
         console.log('Something went wrong!', err);
       });
-})
+});
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
