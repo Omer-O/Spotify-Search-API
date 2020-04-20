@@ -1,9 +1,10 @@
 <p>this is the albums page</p>
-
 <div class="card">
-{{#results}}
-    <img src="{{images.url}}" alt="artist">
-    <p>{{name}}</p>
-    <a href="/tracks/{{id}}">View Tracks</a>
-{{/results}}
+    {{#results}}
+    <div class="results">
+        <img src="{{images.url}}" alt="artist">
+        <p class="artist-name">{{name}}</p>
+        <a class="button" href="/tracks/{{id}}">View Tracks</a>
+    </div>
+    {{/results}}
 </div>

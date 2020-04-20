@@ -1,6 +1,7 @@
 * {
     font-family: 'Roboto Mono', monospace;
     line-height: 1.5;
+    background-color: #91a1a9;
 }
 
 body {
@@ -8,29 +9,53 @@ body {
     margin: 0;
 }
 
-.container {
+.card {
     display: flex;
-    justify-content: flex-start;
-    flex-flow: column;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
     height: 100%;
 }
-.card {
+.results {
+    max-width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
     background: #e7f0f5cc;
-    /* height: 410px; */
-    border: black 2px solid;
-    border-radius: 20px;
-    padding: 15px;
+     border: black 10px solid;
+    /* border-radius: 20px;
+    padding: 15px; */
     margin: 40px;
     justify-content: space-around;
     box-shadow: 0 1px 15px rgb(0, 0, 3), 0 10px 3px 1px rgba(4, 5, 6, 0.24);
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1); */
 }
 
 img {
     height: 300px;
     width: 300px;
-    border-radius: 25%;
+    /* border-radius: 25%; */
 
+}
+
+.artist-name {
+    background: inherit;
+    padding: 7px;
+    text-align: center;
+    margin: 0;
+}
+
+.button {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
 }
 
 img:hover {

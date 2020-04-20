@@ -1,7 +1,9 @@
 <div class="card">
 {{#results}}
+<div class="results">
     <img src="{{images.url}}" alt="artist">
-    <p>{{name}}</p>
-    <a href="/albums/{{id}}">View Albums</a>
+    <p class="artist-name">{{name}}</p>
+    <a class="button" href="/albums/{{id}}">View Albums</a>
+</div>
 {{/results}}
 </div>
