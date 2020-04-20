@@ -1,0 +1,39 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.5;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    height: 100%;
+}
+.card {
+    background: #e7f0f5cc;
+    /* height: 410px; */
+    border: black 2px solid;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 40px;
+    justify-content: space-around;
+    box-shadow: 0 1px 15px rgb(0, 0, 3), 0 10px 3px 1px rgba(4, 5, 6, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    border-radius: 25%;
+
+}
+
+img:hover {
+    color: lightgrey;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+}

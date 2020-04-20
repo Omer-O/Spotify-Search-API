@@ -32,13 +32,13 @@ app.get("/artist-search", (req, res) => {
     spotifyApi
       .searchArtists(req.query.search, { limit: 20 })
       .then(data => {
-          // console.log('The received data from the API: ', data.body.artists.next);
           let results = data.body.artists.items;
           let next
         results.map(artist => {
             if (artist.images.length === 0) {
-                artist.images = "/images/dude.jpg";
-            } else {
+                artist.images = [{ url: "/images/dude.jpg" }];
+            }
+            if (artist.images.length > 0) {
                 artist.images = artist.images[0];
             }
         });
