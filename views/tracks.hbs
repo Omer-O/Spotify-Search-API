@@ -1,7 +1,12 @@
-<p>tracks page</p>
 
 <div class="album-priview">
-{{#results}}
+    <button onclick="window.window.history.back();"> Back to albums</button>
+    <div class="header">
+        <h2>Track</h2>
+        <h1>Album: {{album}}</h1>
+        <h2>Privew</h2>
+    </div>
+    {{#results}}
     <div class="tracks">
         <div class="number-name">
             <p class="track-number">{{track_number}}.</p>

@@ -1,12 +1,12 @@
 * {
     font-family: 'Roboto Mono', monospace;
     line-height: 1.5;
-    background-color: #91a1a9;
 }
 
 body {
     box-sizing: border-box;
     margin: 0;
+    background-color: #91a1a9;
 }
 
 /* home page: search artist */
@@ -24,7 +24,7 @@ body {
     padding: 20px;
     left: 50%;
     top: 50%;
-    background: aliceblue;
+    background: #f0f8ffc9;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +43,10 @@ input {
     color: white;
     font-weight: bold;
 }
+ .error {
+     font-size: medium;
+     color: red;
+ }
 
 /* Artists results page */
 
@@ -94,6 +98,13 @@ img {
 
 /* Albums priview page */
 
+.header {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
 .album-priview {
     display: flex;
     flex-flow: column;
@@ -104,13 +115,15 @@ img {
 
 .tracks {
     display: flex;
+    font-size: xx-large;
     flex-flow: row;
     place-content: space-between;
-    margin-right: 20%;
-    margin-left: 25%;
-    padding: 15px;
+    align-items: center;
+    margin-right: 2%;
+    margin-left: 2%;
+    padding: 10px;
     border: solid 3px black;
-    border-radius: 30px;
+    border-radius: 60px;
 }
 
 .number-name {
@@ -121,6 +134,14 @@ img {
     margin-right: 5px;
 }
 
+button {
+    background: #db5a5a;
+    width: -webkit-fill-available;
+    padding: 4px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
 /* extras */
 
 img:hover {
@@ -139,5 +160,18 @@ img:hover {
 
     .button {
         font-size: small;
+    }
+
+    .tracks {
+        font-size: small;
+    }
+
+    .number-name {
+        width: -webkit-fill-available;
+    }
+
+    audio {
+        width: 177px;
+        height: 30px;
     }
 }
