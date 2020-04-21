@@ -9,6 +9,43 @@ body {
     margin: 0;
 }
 
+/* home page: search artist */
+
+.container {
+    background-image: url(/images/spotify-background.jpeg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.form {
+    position: fixed;
+    width: 30%;
+    padding: 20px;
+    left: 50%;
+    top: 50%;
+    background: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+input {
+  width: 50%;
+  font-size: 1rem;
+}
+
+.submit-button {
+    background: #4E9CAF;
+    padding: 4px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Artists results page */
+
 .card {
     display: flex;
     flex-flow: row wrap;
@@ -36,7 +73,7 @@ img {
 }
 
 .artist-name {
-    background: inherit;
+    background: #ffffff00;
     padding: 7px;
     text-align: center;
     margin: 0;
@@ -44,15 +81,18 @@ img {
 
 .button {
     display: block;
-    width: 115px;
-    height: 25px;
+    width: fit-content;
+    height: fit-content;
     background: #4E9CAF;
     padding: 10px;
+    text-decoration: none;
     text-align: center;
     border-radius: 5px;
     color: white;
     font-weight: bold;
 }
+
+/* Albums priview page */
 
 .album-priview {
     display: flex;
@@ -81,7 +121,23 @@ img {
     margin-right: 5px;
 }
 
+/* extras */
+
 img:hover {
     color: lightgrey;
     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+}
+
+/* mobile view */
+
+@media screen and (max-width: 480px) {
+
+    img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .button {
+        font-size: small;
+    }
 }

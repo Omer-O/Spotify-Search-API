@@ -1,4 +1,7 @@
-<form action="/artist-search" method="GET">
-    <input type="text" name="search" placeholder="search">
-    <button id="submit">Search Artist</button>
-</form>
+<div class="container">
+    <form class="form" action="/artist-search" method="GET">
+        <p class="error">{{err}}</p>
+        <input class="search-input" type="text" name="search" placeholder="search">
+        <button class="submit-button">Search Artist</button>
+    </form>
+</div>

@@ -29,26 +29,40 @@ app.get("/", (req, res) => {
     res.render("artist-search");
 });
 app.get("/artist-search", (req, res) => {
-    spotifyApi
-      .searchArtists(req.query.search, { limit: 20 })
-      .then(data => {
-          let results = data.body.artists.items;
-          let next
-        results.map(artist => {
-            if (artist.images.length === 0) {
-                artist.images = [{ url: "/images/dude.jpg" }];
-            }
-            if (artist.images.length > 0) {
-                artist.images = artist.images[0];
-            }
+    const searchInput = req.query.search;
+    if (searchInput.length === 0) {
+        res.render("artist-search", {
+            err: "Please enter name"
         });
-        console.log('this is results', results);
-        res.render("artist-search-results", {
-            results: results,
-            next: data.body.artists.next
+    } else {
+        spotifyApi
+        .searchArtists(searchInput, { limit: 20 })
+        .then(data => {
+            let results = data.body.artists.items;
+            let next = data.body.artists.next;
+            results.map(artist => {
+                if (artist.images.length === 0) {
+                    artist.images = [{ url: "/images/dude.jpg" }];
+                }
+                if (artist.images.length > 0) {
+                    artist.images = artist.images[0];
+                }
+            });
+            if (results.length > 0) {
+                console.log('this is results', results);
+                res.render("artist-search-results", {
+                    results: results,
+                    next: next
+                });
+            }
         })
-      })
-      .catch(err => console.log('The error while searching artists occurred: ', err));
+        .catch(err => {
+            console.log('The error while searching artists occurred: ', err);
+            res.render("artist-search", {
+                err: "Please enter a valid name"
+            });
+        });
+    }
 });
 
 // Get album of artist by ID
