@@ -27,6 +27,9 @@ app.get("/", (req, res) => {
 });
 app.get("/artist-search", (req, res) => {
     const searchInput = req.query.search;
+
+    // error MSG if no input was given //
+
     if (searchInput.length === 0) {
         res.render("artist-search", {
             err: "Please enter name"
@@ -35,31 +38,37 @@ app.get("/artist-search", (req, res) => {
         spotifyApi
         .searchArtists(searchInput, { limit: 20 })
         .then(data => {
-            let results = data.body.artists.items;
-            let next = data.body.artists.next;
-            results.map(artist => {
-                if (artist.images.length === 0) {
-                    artist.images = [{ url: "/images/dude.jpg" }];
-                }
-                if (artist.images.length > 0) {
-                    artist.images = artist.images[0];
-                }
-            });
-            if (results.length > 0) {
-                console.log('this is results', results);
-                res.render("artist-search-results", {
-                    results: results,
-                    next: next
+            const artistData = data.body.artists;
+
+        // error MSG if artist not found //
+
+            let artistValidName = artistData.total;
+            if ( artistValidName === 0) {
+                res.render("artist-search", {
+                    err: "Artist was not found"
                 });
+            } else {
+                let results = artistData.items;
+                let next = artistData.next;
+                results.map(artist => {
+                    if (artist.images.length === 0) {
+                        artist.images = [{ url: "/images/dude.jpg" }];
+                    }
+                    if (artist.images.length > 0) {
+                        artist.images = artist.images[0];
+                    }
+                });
+                if (results.length > 0) {
+                    console.log('this is results', results);
+                    res.render("artist-search-results", {
+                        results: results,
+                        next: next
+                    });
+                }
             }
         })
         .catch(err => {
             console.log('The error while searching artists occurred: ', err);
-            if (err) {
-                res.render("artist-search", {
-                    err: "Please enter a valid name"
-                });
-            }
         });
     }
 });
