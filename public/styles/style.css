@@ -102,6 +102,8 @@ img {
   background: black;
   color: white;
   display: flex;
+  text-align: center;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -173,5 +175,9 @@ img:hover {
     audio {
         width: 177px;
         height: 30px;
+    }
+
+    input {
+        min-width: fit-content;
     }
 }
