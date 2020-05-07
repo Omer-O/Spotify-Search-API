@@ -1,6 +1,6 @@
 # Spotify-Search-API
 
-My Spotify=Search try it out
+My Spotify-Search try it out
 
 <a href="https://search-with-spotify.herokuapp.com/">CLICK ME</a> 
 
